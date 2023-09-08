@@ -105,7 +105,7 @@ public class Aplicacion{
 				}
 				}catch (Exception e)
 				{
-					System.out.println("Debes seleccionar una opción para continuar");
+					System.out.println("Termina de crear tu pedido, por favor");
 				}}
 				
 		}
@@ -216,10 +216,9 @@ public class Aplicacion{
 		}
 	}
 	
-	public static void ejecutarCerrarYGuardarPedido() {
-		
+	public static void ejecutarCerrarYGuardarPedido() 
+	{
 		restaurante.cerrarYGuardarPedido();
-		
 	}
 	
 	public static void ejecutarConsultarFacturaId() throws IOException {
@@ -228,7 +227,7 @@ public class Aplicacion{
 		
 		String nombreArchivo = input("Ingresa el id de tu factura");
 		
-		File archivo = new File ("./data/facturas/"+nombreArchivo+".txt");
+		File archivo = new File ("./data/Facturas/"+nombreArchivo+".txt");
 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(archivo));

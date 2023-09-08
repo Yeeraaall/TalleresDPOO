@@ -36,6 +36,7 @@ public class Pedido {
 	}
 	
 	
+
 	public int getIdPedido() 
 	{
 		return this.idPedido;
@@ -117,7 +118,7 @@ public class Pedido {
 			System.out.println("No hemos podido guardar tu factura :( ");
 			e.printStackTrace();
 		}
-		return ;
+		
 	 }
 	
 	

@@ -17,7 +17,12 @@ public class Restaurante {
 	public static ArrayList<Combo> combos = new ArrayList<Combo>();
 	public static ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
 	public static Pedido pedidoActual = null;
-	private void cargarMenu(File archivoMenu){
+	
+	
+	
+	
+	private void cargarMenu(File archivoMenu)
+	{
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(archivoMenu))) 
 		{
@@ -36,9 +41,12 @@ public class Restaurante {
 				linea = br.readLine();
 			}
 			
-		} catch (IOException e) {
+		} catch (IOException e) 
+		{
 			System.out.println("Uy, hemos tenido problemas para cargar nuestro menu, inténtalo de nuevo.");
 			e.printStackTrace();
+			
+			
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -92,18 +100,13 @@ public class Restaurante {
 		try (BufferedReader br = new BufferedReader(new FileReader(archivoIngredientes))) {
 			String linea = br.readLine();
 			
-			while (linea != null) {
-				
+			while (linea != null) 
+			{
 				String[] valores = linea.split(";");
-				
 				String nproducto = valores[0];
-				
 				int valorproducto = Integer.parseInt(valores[1]);
-				
 				Ingrediente agregadoingrediente = new Ingrediente(nproducto, valorproducto);
-				
 				ingredientes.add(agregadoingrediente);
-				
 				linea = br.readLine();
 				
 			
@@ -146,15 +149,23 @@ public class Restaurante {
 		return Restaurante.menu;
 	}
 	
+	
+	
+	
 	public ArrayList<Combo> getCombos()
 	{
 		return Restaurante.combos;
 	}
 	
+	
+	
+	
 	public ArrayList<Ingrediente> getIngredientes()
 	{
 		return Restaurante.ingredientes;
 	}
+	
+	
 	
 	public void cargarInformacionRestaurante(File archivoIngredientes, File archivoMenu, File archivoCombos) 
 	{
@@ -163,20 +174,32 @@ public class Restaurante {
 		cargarCombos(archivoCombos);
 	}
 	
+	
+	
 	public void iniciarPedido(String nombreCliente, String direccionCliente) throws IOException 
 	{
 		pedidoActual = new Pedido(nombreCliente, direccionCliente);
 	}
 	
+	
+	
+	
 	public void cerrarYGuardarPedido() 
 	{
 		pedidoActual.guardarFactura();
+		
 	}
+	
+	
+	
 	
 	public Pedido getPedidoEnCurso() 
 	{
 		return this.pedidoActual;
 	}
+	
+	
+	
 	
 	public Restaurante() 
 	{
